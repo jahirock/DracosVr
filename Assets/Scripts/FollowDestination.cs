@@ -16,13 +16,16 @@ public class FollowDestination : MonoBehaviour
 
     Animator animator;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
         destinations = GameObject.FindGameObjectsWithTag("WayPoint");
         player = GameObject.FindWithTag("Player");
         animator = GetComponent<Animator>();
+    }
 
+    // Start is called before the first frame update
+    void Start()
+    {
         destination = destinations[Random.Range(0, destinations.Length)].transform;
     }
 

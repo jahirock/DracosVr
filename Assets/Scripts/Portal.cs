@@ -7,6 +7,9 @@ public class Portal : MonoBehaviour
     public GameObject[] enemies;
     public int numberOfEnemies;
 
+    public float minSpawnTime = 10F;
+    public float maxSpawnTime = 20F;
+
     void Start()
     {
         StartCoroutine("GenerateNewEnemy");
@@ -18,7 +21,7 @@ public class Portal : MonoBehaviour
         {
             GameObject enemy = enemies[Random.Range(0, enemies.Length)];
             Instantiate(enemy, transform);
-            yield return new WaitForSeconds(Random.Range(10F, 20F));
+            yield return new WaitForSeconds(Random.Range(minSpawnTime, maxSpawnTime));
         }
     }
 }

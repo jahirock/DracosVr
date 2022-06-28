@@ -48,19 +48,19 @@ public class Weapons : MonoBehaviour
         if(rTrigger > 0.1F && magicCooldown > MAGIC_COOLDOWN_TIME)
         {
             //TODO: gatillo derecho, disparar fuego si tenemos la vara activada
-        	Debug.Log("RT: " + rTrigger);
+        	//Debug.Log("RT: " + rTrigger);
             if(currentMagic != null)
             {
-                Debug.Log("Last position: ");
-                Debug.Log(lastPositionMagicLaunchPoint);
+                //Debug.Log("Last position: ");
+                //Debug.Log(lastPositionMagicLaunchPoint);
 
-                Debug.Log("current position");
-                Debug.Log(magicLaunchPoint.transform.position);
+                //Debug.Log("current position");
+                //Debug.Log(magicLaunchPoint.transform.position);
                 magicCooldown = 0;
                 //Se obtiene la fuerza con la que se va a lanzar el proyectil
                 //Vector3 force = 100f * (rightHand.transform.position - lastPositionRight) / Time.deltaTime;
                 Vector3 force = forceMultiplyLaunch * (magicLaunchPoint.transform.position - lastPositionMagicLaunchPoint) / Time.deltaTime;
-                Debug.Log(force);
+                //Debug.Log(force);
                 //Se desacopla la magia del parent para que se mueva libremente.
                 currentMagic.transform.parent = null;
                 //Le quita el bloqueo de x y z
@@ -86,7 +86,7 @@ public class Weapons : MonoBehaviour
         if(rGrip > 0.1F && weaponCooldown > WEAPON_COOLDOWN_TIME)
         {
             //TODO: agarre derecho
-		    Debug.Log("RG: " + rGrip);
+		    //Debug.Log("RG: " + rGrip);
 		    weaponCooldown = 0;
 		    rightWeapon.SetActive(!rightWeapon.activeInHierarchy);
 		    rightWeaponAlt.SetActive(!rightWeaponAlt.activeInHierarchy);
@@ -104,7 +104,7 @@ public class Weapons : MonoBehaviour
         if(lGrip > 0.1F && weaponCooldown > WEAPON_COOLDOWN_TIME)
         {
             //TODO: agarre izquierdo
-		    Debug.Log("LG: " + lGrip);
+		    //Debug.Log("LG: " + lGrip);
 		    weaponCooldown = 0;
 		    leftWeapon.SetActive(!leftWeapon.activeInHierarchy);
         }
