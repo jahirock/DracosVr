@@ -100,7 +100,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.46748877, z: 1}
+  m_Size: {x: 3.3728404, y: 0.46748877, z: 4.0649853}
   m_Center: {x: 0, y: 0.26625562, z: 0}
 --- !u!135 &492922889
 SphereCollider:
@@ -113,7 +113,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 4.29
+  m_Radius: 5.527732
   m_Center: {x: 0, y: 6.33, z: -0.15}
 --- !u!114 &492922887
 MonoBehaviour:
@@ -155,6 +155,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dbd6b1e177363c4ab8b114ee6019e17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 11
+  destPlayerProb: 0.1
 --- !u!1001 &3314162489295375715
 PrefabInstance:
   m_ObjectHideFlags: 0

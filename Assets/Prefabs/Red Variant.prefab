@@ -84,6 +84,16 @@ PrefabInstance:
       propertyPath: healthPoints
       value: 700
       objectReference: {fileID: 0}
+    - target: {fileID: 8627489937381876716, guid: 59c100dd669d88f46b60555886d4dae7,
+        type: 3}
+      propertyPath: speed
+      value: 17.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8627489937381876716, guid: 59c100dd669d88f46b60555886d4dae7,
+        type: 3}
+      propertyPath: destPlayerProb
+      value: 0.6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59c100dd669d88f46b60555886d4dae7, type: 3}
 --- !u!1 &9104875513223599929 stripped
@@ -119,7 +129,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.46748877, z: 1}
+  m_Size: {x: 3.4395607, y: 3.4346385, z: 1}
   m_Center: {x: 0, y: 0.26625562, z: 0}
 --- !u!135 &2014498814035621565
 SphereCollider:
@@ -132,5 +142,5 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 4.29
+  m_Radius: 6.2851267
   m_Center: {x: 0, y: 7.51, z: -1.85}

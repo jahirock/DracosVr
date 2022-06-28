@@ -10,6 +10,8 @@ public class FollowDestination : MonoBehaviour
 
     public float speed = 5F;
 
+    public float destPlayerProb = 0.5F;
+
     GameObject player;
 
     Animator animator;
@@ -42,7 +44,7 @@ public class FollowDestination : MonoBehaviour
         //Cambio de ruta
         if(targetDirection.magnitude < 0.1)
         {
-            if(Random.Range(0F, 1F) < 0.6)
+            if(Random.Range(0F, 1F) < destPlayerProb)
             {
                 destination = destinations[Random.Range(0, destinations.Length)].transform;
             }

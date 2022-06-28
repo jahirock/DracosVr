@@ -228,7 +228,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.46748877, z: 1}
+  m_Size: {x: 2.9384403, y: 0.46748877, z: 5.8467283}
   m_Center: {x: 0, y: 0.26625562, z: 0}
 --- !u!135 &774125625
 SphereCollider:
@@ -241,8 +241,22 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 4.29
+  m_Radius: 5.634028
   m_Center: {x: 0, y: 7.51, z: -0.15}
+--- !u!114 &-8844295015743408754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4339560712984234480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dbd6b1e177363c4ab8b114ee6019e17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 17.7
+  destPlayerProb: 0.6
 --- !u!114 &774125622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -271,18 +285,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   healthPoints: 400
---- !u!114 &-8844295015743408754
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4339560712984234480}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6dbd6b1e177363c4ab8b114ee6019e17, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &4339560712984333324 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 475692, guid: 09ade59177310454ba3c93ae4b7dc125,
