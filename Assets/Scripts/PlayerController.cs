@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
 
     CharacterController controller;
 
+    public GameObject camera;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -29,7 +31,7 @@ public class PlayerController : MonoBehaviour
         
         if(dir != Vector2.zero)
         {
-            moveDirection = (transform.right * dir.x) + (transform.forward * dir.y);
+            moveDirection = (camera.transform.right * dir.x) + (camera.transform.forward * dir.y);
         }
 
         controller.Move(moveDirection * speed * Time.deltaTime);
