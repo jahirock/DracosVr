@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2300000}
   - component: {fileID: 11400004}
   - component: {fileID: 4526623984959437412}
+  - component: {fileID: 5844305659419598646}
   - component: {fileID: 4329882156621289019}
   - component: {fileID: 6933793370512683837}
   - component: {fileID: 7018459157874312818}
@@ -122,6 +123,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   damage: 100
+--- !u!114 &5844305659419598646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ae6138db1d9030459d728a26391e424, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &4329882156621289019
 SphereCollider:
   m_ObjectHideFlags: 0

@@ -5,8 +5,38 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     public DamageType type = DamageType.enemy;
-
     private Animator animator;
+    [SerializeField]
+    private float healthPoints = 100;
+    [SerializeField]
+    private float maxHealthPoints = 100F;
+    [SerializeField]
+    private float healthIncreaseTime = 1F;
+    [SerializeField]
+    private float healthIncreasePoints = 1F;
+
+    private float healthCooldown = 0;
+
+    void Start()
+    {
+        if (GetComponent<Animator>() != null)
+        {
+            animator = GetComponent<Animator>();
+            animator.SetFloat("health", HealthPoints);
+        }
+    }
+
+    private void Update()
+    {
+        healthCooldown += Time.deltaTime;
+
+        if (HealthPoints > 0 && HealthPoints < MaxHealthPoints && healthCooldown >= healthIncreaseTime)
+        {
+            HealthPoints += healthIncreasePoints;
+            healthCooldown = 0;
+        }
+    }
+
     public float HealthPoints 
     {
         get {
@@ -30,16 +60,16 @@ public class Health : MonoBehaviour
         }
     }
 
-    [SerializeField]
-    private float healthPoints = 100;
-
-    void Start()
+    public float MaxHealthPoints
     {
-        if (GetComponent<Animator>() != null)
+        get 
         {
-            animator = GetComponent<Animator>();
-            animator.SetFloat("health", HealthPoints);
+            return maxHealthPoints;
+        }
+        set
+        {
+            maxHealthPoints = value;
+            HealthPoints = value;
         }
     }
-
 }

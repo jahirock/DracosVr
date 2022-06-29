@@ -22,10 +22,10 @@ public class MenuBar : MonoBehaviour
         switch(barType)
         {
             case BarType.health:
-                slider.maxValue = target.GetComponent<Health>().HealthPoints;
+                slider.maxValue = target.GetComponent<Health>().MaxHealthPoints;
                 break;
             case BarType.mana:
-                slider.maxValue = Weapons.MAGIC_COOLDOWN_TIME;
+                slider.maxValue = target.GetComponent<Mana>().MaxManaPoints;
                 break;
         }
     }
@@ -38,7 +38,7 @@ public class MenuBar : MonoBehaviour
                 slider.value = target.GetComponent<Health>().HealthPoints;
                 break;
             case BarType.mana:
-                slider.value = target.GetComponent<Weapons>().magicCooldown;
+                slider.value = target.GetComponent<Mana>().ManaPoints;
                 break;
         }
     }

@@ -33,7 +33,6 @@ public class Damage : MonoBehaviour
                     }
                 }
                 other.GetComponent<Health>().HealthPoints -= currentDamage;
-                Debug.Log("Daño a: " + other.tag + ", healthtype: " + other.GetComponent<Health>().type.ToString() + ". Por: "  + type.ToString());
             }
         }
     }

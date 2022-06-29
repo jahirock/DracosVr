@@ -145,6 +145,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Black Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 116688, guid: 09ade59177310454ba3c93ae4b7dc125, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 475692, guid: 09ade59177310454ba3c93ae4b7dc125, type: 3}
       propertyPath: m_RootOrder
       value: 0
