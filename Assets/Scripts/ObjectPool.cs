@@ -35,7 +35,12 @@ public class ObjectPool : MonoBehaviour
                 return pooledObjects[i];
             }
         }
-        return null;
+
+        GameObject tmp = Instantiate(objectToPool);
+        tmp.SetActive(false);
+        pooledObjects.Add(tmp);
+
+        return tmp;
     }
 
 

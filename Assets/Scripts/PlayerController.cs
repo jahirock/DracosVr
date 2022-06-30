@@ -90,8 +90,8 @@ public class PlayerController : MonoBehaviour
         //Se asegura de que xRotation solo pueda tener valores entre -80 y 70
         xRotation = Mathf.Clamp(xRotation, -80F, 70F);
         //Rota la camara en el eje X. (Osea que va a apuntar hacia arriba o hacia abajo)
-        //cameraOffset.localRotation = Quaternion.Euler(xRotation, 0F, 0F);
-        cameraOffset.localRotation = Quaternion.Euler(xRotation, yRotation, 0F);
+        
+        //cameraOffset.localRotation = Quaternion.Euler(xRotation, yRotation, 0F);
         //Rota al jugador(y la camara) en el eje Y (Osea mirar a los lados)
         //cameraOffset.Rotate(Vector3.up * mouseX);
     }

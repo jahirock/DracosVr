@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class Weapons : MonoBehaviour
 {
     public const float WEAPON_COOLDOWN_TIME = 0.5F;
-    public const float MAGIC_COOLDOWN_TIME = 2F;
+    public const float MAGIC_COOLDOWN_TIME = 0.5F;
 
     public GameObject rightWeapon, leftWeapon, rightWeaponAlt, magicLaunchPoint;
     public GameObject fireMagic;
@@ -23,7 +23,6 @@ public class Weapons : MonoBehaviour
     public InputActionReference leftGrip = null;
     public InputActionReference rightGrip = null;
 
-    Vector3 lastPositionRight, lastPositionLeft;
     Vector3 lastPositionMagicLaunchPoint = Vector3.zero;
 
     Mana mana;
@@ -37,6 +36,8 @@ public class Weapons : MonoBehaviour
         mana = GetComponent<Mana>();
 
         rightWeaponAlt.SetActive(false);
+
+        lastPositionMagicLaunchPoint = magicLaunchPoint.transform.position;
     }
 
     // Update is called once per frame
@@ -49,53 +50,22 @@ public class Weapons : MonoBehaviour
         float lGrip = leftGrip.action.ReadValue<float>();
         float rGrip = rightGrip.action.ReadValue<float>();
 
-        //Si se puede usar la magia
-        //if(magicCooldown > MAGIC_COOLDOWN_TIME)
-        if(mana.ManaPoints >= manaCost)
+        if (rTrigger > 0.1F && magicCooldown > MAGIC_COOLDOWN_TIME)
         {
-            //Si el trigger derecho está presionado
-            if(rTrigger > 0.1F)
+            if (currentMagic != null && mana.ManaPoints >= manaCost)
             {
-                //Si no esta iniciado el lanzamiento de magia, se inicia
-                if(lastPositionMagicLaunchPoint == Vector3.zero)
-                {
-                    lastPositionMagicLaunchPoint = magicLaunchPoint.transform.position;
-                }
-                else
-                {
-                    Vector3 force = forceMultiplyLaunch * (magicLaunchPoint.transform.position - lastPositionMagicLaunchPoint);// / Time.deltaTime;
-                    Debug.DrawRay(lastPositionMagicLaunchPoint, force);
-                }
-            }
-            //Si se suelta el trigger y está iniciado el lanzamiento de magia
-            else if(lastPositionMagicLaunchPoint != Vector3.zero)
-            {
-                if (currentMagic != null)
-                {
-                    magicCooldown = 0;
-                    //Se obtiene la fuerza con la que se va a lanzar el proyectil
-                    Vector3 force = forceMultiplyLaunch * (magicLaunchPoint.transform.position - lastPositionMagicLaunchPoint);// / Time.deltaTime;
+                magicCooldown = 0;
+                //Se obtiene la fuerza con la que se va a lanzar el proyectil
+                Vector3 force = forceMultiplyLaunch * (magicLaunchPoint.transform.position - lastPositionMagicLaunchPoint) / Time.deltaTime;
 
-                    GameObject fire = ObjectPool.SharedInstance.GetPooledObject();
-                    fire.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-                    fire.GetComponent<Rigidbody>().AddForce(force, ForceMode.Impulse);
-                    fire.GetComponent<AudioSource>().PlayOneShot(fireShootClip);
-                    fire.SetActive(true);
+                GameObject fire = ObjectPool.SharedInstance.GetPooledObject();
+                fire.SetActive(true);
+                fire.transform.position = currentMagic.transform.position;
+                fire.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+                fire.GetComponent<Rigidbody>().AddForce(force, ForceMode.Impulse);
+                fire.GetComponent<AudioSource>().PlayOneShot(fireShootClip);
 
-                    mana.ManaPoints -= manaCost;
-
-                    //Se desacopla la magia del parent para que se mueva libremente.
-                    //currentMagic.transform.parent = null;
-                    //Le quita el bloqueo de x y z
-                    //currentMagic.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-                    //currentMagic.GetComponent<Rigidbody>().AddForce(force, ForceMode.Impulse);
-                    //currentMagic.GetComponent<AudioSource>().PlayOneShot(fireShootClip);
-
-                    //Invoke("LoadMagic", MAGIC_COOLDOWN_TIME);
-
-                    //Se reinicia el lanzamiento de magia
-                    lastPositionMagicLaunchPoint = Vector3.zero;
-                }
+                mana.ManaPoints -= manaCost;
             }
         }
 
@@ -125,6 +95,8 @@ public class Weapons : MonoBehaviour
 		    weaponCooldown = 0;
 		    leftWeapon.SetActive(!leftWeapon.activeInHierarchy);
         }
+
+        lastPositionMagicLaunchPoint = magicLaunchPoint.transform.position;
     }
 
 	void LoadMagic()

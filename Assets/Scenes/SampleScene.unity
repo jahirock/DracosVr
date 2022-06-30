@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17817728, g: 0.2169013, b: 0.26956803, a: 1}
+  m_IndirectSpecularColor: {r: 0.17817779, g: 0.21690187, b: 0.26956898, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -187,6 +187,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7696839325390256742, guid: 16e6dcadb0a116d4b84dd8e113cbebb1,
         type: 3}
+      propertyPath: maxSpawnTime
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 7696839325390256742, guid: 16e6dcadb0a116d4b84dd8e113cbebb1,
+        type: 3}
+      propertyPath: minSpawnTime
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 7696839325390256742, guid: 16e6dcadb0a116d4b84dd8e113cbebb1,
+        type: 3}
       propertyPath: numberOfEnemies
       value: 5
       objectReference: {fileID: 0}
@@ -258,6 +268,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7696839325390256742, guid: 16e6dcadb0a116d4b84dd8e113cbebb1,
+        type: 3}
+      propertyPath: maxSpawnTime
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 7696839325390256742, guid: 16e6dcadb0a116d4b84dd8e113cbebb1,
+        type: 3}
+      propertyPath: minSpawnTime
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 7696839325390256742, guid: 16e6dcadb0a116d4b84dd8e113cbebb1,
         type: 3}
@@ -1738,6 +1758,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7696839325390256742, guid: 16e6dcadb0a116d4b84dd8e113cbebb1,
         type: 3}
+      propertyPath: maxSpawnTime
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 7696839325390256742, guid: 16e6dcadb0a116d4b84dd8e113cbebb1,
+        type: 3}
+      propertyPath: minSpawnTime
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 7696839325390256742, guid: 16e6dcadb0a116d4b84dd8e113cbebb1,
+        type: 3}
       propertyPath: numberOfEnemies
       value: 5
       objectReference: {fileID: 0}
@@ -1885,7 +1915,7 @@ MonoBehaviour:
   pooledObjects: []
   objectToPool: {fileID: 238674986967569326, guid: dbc60ce468fd1bc47ac7ff83d6c62e67,
     type: 3}
-  amountToPool: 20
+  amountToPool: 10
 --- !u!4 &1122765289
 Transform:
   m_ObjectHideFlags: 0
@@ -3858,7 +3888,7 @@ Transform:
   - {fileID: 1028669896}
   - {fileID: 357846726}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1999940214
 GameObject:
@@ -3955,7 +3985,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2040066186}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -46, y: 11.22, z: -605}
+  m_LocalPosition: {x: -46, y: 6.57, z: -605}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4814,7 +4844,7 @@ PrefabInstance:
     - target: {fileID: 4508046335056398434, guid: 16e6dcadb0a116d4b84dd8e113cbebb1,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4508046335056398434, guid: 16e6dcadb0a116d4b84dd8e113cbebb1,
         type: 3}
@@ -4865,6 +4895,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7696839325390256742, guid: 16e6dcadb0a116d4b84dd8e113cbebb1,
+        type: 3}
+      propertyPath: maxSpawnTime
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 7696839325390256742, guid: 16e6dcadb0a116d4b84dd8e113cbebb1,
+        type: 3}
+      propertyPath: minSpawnTime
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 7696839325390256742, guid: 16e6dcadb0a116d4b84dd8e113cbebb1,
         type: 3}
